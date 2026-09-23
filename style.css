@@ -17,6 +17,12 @@ h2 {
     border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
+h3 {
+    color: rgb(106, 58, 147);
+    font-size: 24px;
+    margin-top: 20px;
+}
+
 p {
     font-size: 18px;
     line-height: 1.6;
@@ -36,7 +42,7 @@ img {
 }
 
 li {
-    color: rgb(25, 50, 80);
+    color: rgb(28, 49, 75);
     margin-bottom: 10px;
 }
 
@@ -50,3 +56,29 @@ mark {
     color: rgb(92, 61, 120);
 }
 
+#favorite-activities {
+    background-color: rgb(212, 204, 209);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 30%; height: 50%;
+}
+
+.image-caption {
+    font-size: 23px;
+    color: rgb(97, 3, 3);
+    text-align:left;
+    margin-top: 30px;
+}
+.bio {
+    font-size: 20px;
+    color: rgb(183, 102, 146);
+    text-align:left;
+    margin-top: 10px;
+}
+
+div {
+  margin-bottom: 20px;
+  padding: 10px;
+  text align: left;
+}
