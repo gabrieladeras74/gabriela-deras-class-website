@@ -11,14 +11,22 @@ body{background-color: rgb(225, 225, 197);
     text-align: center;
 }
 
-h2 {
-    color: rgb(117, 83, 145);
-    font-size: 30px;
-    border-bottom: 1.5px solid rgb(0, 0, 0);
+h2 {color: rgb(233, 127, 226);
+    font-size: 35px;
+    margin-top: 10px;
+    text-align: center;
+    padding-bottom: 1.5px;
+    
 }
 
-h3 {
-    color: rgb(106, 58, 147);
+h3 {color: rgb(117, 83, 145);
+    font-size: 30px;
+    border-bottom: 1.5px solid rgb(0, 0, 0);
+   
+}
+
+h4 {
+color: rgb(106, 58, 147);
     font-size: 24px;
     margin-top: 20px;
 }
