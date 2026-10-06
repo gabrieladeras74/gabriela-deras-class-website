@@ -90,3 +90,21 @@ div {
   padding: 10px;
   text align: left;
 }
+
+nav a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none;
+    color: #8B3A62;
+    font-weight: bold;
+    border: 2px solid #C98BA8;
+    border-radius: 20px;
+    background-color: #F5E6EC;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #C98BA8;
+    color: white;
+}
