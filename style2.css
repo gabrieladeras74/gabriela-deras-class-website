@@ -1,0 +1,77 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff4d6;
+    color: #6b4f3a;
+
+    font-family: 'Fredoka', sans-serif;
+
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Main heading */
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    color: #f4a261;
+    margin: 10px;
+}
+
+/* Cute subheading */
+#message {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    color: #d88962;
+    letter-spacing: 0.5px;
+    margin: 5px 0 15px;
+
+    transition: color 0.6s ease;
+}
+
+/* Sun/Moon button */
+#sunMoon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+/* Sun/Moon image */
+#sunMoon img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+/* Little hover effect */
+#sunMoon:hover img {
+    transform: scale(1.08) rotate(5deg);
+}
+
+/* NIGHT MODE */
+body.night {
+    background-color: #29244a;
+    color: #f7eaff;
+}
+
+/* Night heading */
+body.night h1 {
+    color: #c9b6ff;
+}
+
+/* Night subheading */
+body.night #message {
+    color: #d8c9ff !important;
+}
