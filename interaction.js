@@ -6,6 +6,7 @@ const timeTitle = document.getElementById("timeTitle");
 
 sunMoon.addEventListener("click", changeTime);
 
+
 function changeTime() {
 
     document.body.classList.toggle("night");
