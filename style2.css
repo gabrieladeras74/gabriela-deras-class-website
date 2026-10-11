@@ -77,18 +77,20 @@ body.night #message {
 }
 
 
-/* Back to Home link */
+/* Keep Back to Home in the top-left corner */
 a[href="index.html"] {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
+    z-index: 1000;
+
+    margin: 0;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 12px;
 
-    /* Daytime colors */
     color: #8A5A00;
     background-color: #FFF1C7;
     border: 1px solid #FFD166;
@@ -96,21 +98,16 @@ a[href="index.html"] {
     transition: all 0.4s ease;
 }
 
-/* Hover effect during daytime */
-a[href="index.html"]:hover {
-    background-color: #FFD166;
-    transform: translateY(-2px);
-}
-
-/* Nighttime colors */
 body.night a[href="index.html"] {
     color: #E5DEFF;
     background-color: #29264D;
-    border: 1px solid #8B80D9;
+    border-color: #8B80D9;
 }
 
-/* Hover effect during nighttime */
+a[href="index.html"]:hover {
+    transform: translateY(-2px);
+}
+
 body.night a[href="index.html"]:hover {
-    background-color: #454078;
     box-shadow: 0 0 12px rgba(139, 128, 217, 0.5);
 }
