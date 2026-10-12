@@ -76,38 +76,39 @@ body.night #message {
     color: #d8c9ff !important;
 }
 
-
-/* Keep Back to Home in the top-left corner */
-a[href="index.html"] {
+/* Back to Home - daytime */
+#backHome {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1000;
-
+    z-index: 9999;
     margin: 0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
     padding: 10px 15px;
     border-radius: 12px;
-
+    text-decoration: none;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     color: #8A5A00;
     background-color: #FFF1C7;
     border: 1px solid #FFD166;
-
-    transition: all 0.4s ease;
+    transition: background-color 0.4s ease, color 0.4s ease,
+                border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-body.night a[href="index.html"] {
+/* Back to Home - nighttime */
+body.night #backHome {
     color: #E5DEFF;
     background-color: #29264D;
     border-color: #8B80D9;
 }
 
-a[href="index.html"]:hover {
-    transform: translateY(-2px);
+/* Hover effects */
+#backHome:hover {
+    background-color: #FFD166;
 }
 
-body.night a[href="index.html"]:hover {
+body.night #backHome:hover {
+    background-color: #454078;
     box-shadow: 0 0 12px rgba(139, 128, 217, 0.5);
 }
