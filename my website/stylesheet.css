@@ -206,38 +206,6 @@ img {
 }
 
 
-
-@media (max-width: 768px) {
-
-    .logo {
-        flex-direction: column;
-    }
-
-    .navigation a {
-        display: inline-block;
-        margin: 5px;
-    }
-
-    .hero img {
-        height: 250px;
-    }
-
-    .welcome {
-        padding: 30px 5%;
-    }
-
-    .why-choose-us {
-        flex-direction: column;
-        padding: 25px;
-    }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-
 /* SERVICES PAGE */
 
 /* Services Introduction */
@@ -352,23 +320,6 @@ img {
     color: #12304A;
 }
 
-/* Mobile Layout */
-@media screen and (max-width: 700px) {
-    .service-packages {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card {
-        border-right: none;
-        border-bottom: 2px solid #12304A;
-    }
-
-    .about-services,
-    .special-offer {
-        width: 100%;
-        display: block;
-    }
-}
 
 
 /* GALLERY & LOCATION PAGE */
@@ -450,28 +401,6 @@ html, body {
 }
 
 
-/* Mobile Layout */
-@media screen and (max-width: 700px) {
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallery-item img {
-        height: 150px;
-    }
-
-    .map-container iframe {
-        height: 280px;
-    }
-}
-
-@media screen and (max-width: 450px) {
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* MINI IMAGE VIEW */
 
