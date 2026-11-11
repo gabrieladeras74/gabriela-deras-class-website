@@ -6,7 +6,7 @@ const offerButtons = document.querySelectorAll(".special-offer button");
 
 offerButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        navigator.clipboard.writeText("GABY25")
+        navigator.clipboard.writeText("GABY25!")
             .then(() => {
                 button.textContent = "Code Copied: GABY25!";
             })
@@ -20,62 +20,88 @@ offerButtons.forEach((button) => {
 
 
 
-/* GALLERY HOVER AND MINI IMAGE VIEW */
+/* GALLERY LIGHTBOX */
 
 const galleryPhotos = document.querySelectorAll(".gallery-item img");
 
-galleryPhotos.forEach((photo) => {
+const lightbox = document.getElementById("galleryLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+
+const closeButton = document.getElementById("lightboxClose");
+const prevButton = document.getElementById("lightboxPrev");
+const nextButton = document.getElementById("lightboxNext");
+
+let currentPhoto = 0;
+
+function showPhoto(index) {
+    currentPhoto = (index + galleryPhotos.length) % galleryPhotos.length;
+
+    const photo = galleryPhotos[currentPhoto];
+
+    lightboxImage.src = photo.src;
+    lightboxImage.alt = photo.alt;
+
+    const caption = photo.closest(".gallery-item").querySelector("p");
+
+    lightboxCaption.textContent = caption
+        ? caption.textContent
+        : photo.alt;
+
+    lightbox.style.display = "flex";
+}
+
+galleryPhotos.forEach((photo, index) => {
     photo.style.cursor = "pointer";
 
-    photo.addEventListener("mouseenter", () => {
-        photo.style.transform = "scale(1.05)";
-        photo.style.transition = "transform 0.3s ease";
-    });
-
-    photo.addEventListener("mouseleave", () => {
-        photo.style.transform = "scale(1)";
-    });
-
     photo.addEventListener("click", () => {
-        const preview = document.createElement("div");
-        preview.className = "mini-image-view";
-
-        const largeImage = document.createElement("img");
-        largeImage.src = photo.src;
-        largeImage.alt = photo.alt;
-
-        const closeButton = document.createElement("button");
-        closeButton.textContent = "×";
-        closeButton.className = "mini-image-close";
-
-        preview.appendChild(largeImage);
-        preview.appendChild(closeButton);
-        document.body.appendChild(preview);
-
-        closeButton.addEventListener("click", () => {
-            preview.remove();
-        });
-
-        preview.addEventListener("click", (event) => {
-            if (event.target === preview) {
-                preview.remove();
-            }
-        });
+        showPhoto(index);
     });
+});
+
+closeButton.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+prevButton.addEventListener("click", () => {
+    showPhoto(currentPhoto - 1);
+});
+
+nextButton.addEventListener("click", () => {
+    showPhoto(currentPhoto + 1);
+});
+
+lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+        lightbox.style.display = "none";
+    }
+});
+
+/* Keyboard controls */
+document.addEventListener("keydown", (event) => {
+    if (lightbox.style.display !== "flex") return;
+
+    if (event.key === "Escape") {
+        lightbox.style.display = "none";
+    }
+
+    if (event.key === "ArrowLeft") {
+        showPhoto(currentPhoto - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+        showPhoto(currentPhoto + 1);
+    }
 });
 
 
 
 
 
-/* 4. SERVICE PACKAGE BUTTONS */
-const serviceButtons = document.querySelectorAll(".service-card button");
+const serviceCards = document.querySelectorAll(".service-card");
 
-serviceButtons.forEach((button, index) => {
-    button.addEventListener("click", () => {
-        const packageNames = ["Basic Wash", "Deluxe Wash", "Premium Wash"];
-
-        alert("You selected: " + packageNames[index]);
+serviceCards.forEach((card) => {
+    card.addEventListener("click", () => {
+        card.classList.toggle("active");
     });
 });
-
